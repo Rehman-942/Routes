@@ -14,6 +14,7 @@ export default function SignIn() {
       return;
     }
     handleAuthChange(true);
+    console.log("Goto Cart");
     navigate("/cart");
   };
 

@@ -4,9 +4,11 @@ const CreateAuthContext = React.createContext(undefined);
 
 function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
-
-  const handleAuthChange = (isAuthenticated) => {
-    setIsAuthenticated(isAuthenticated);
+  console.log("Before Context Api: " + isAuthenticated);
+  const handleAuthChange = (auth) => {
+    console.log("Context Api: " + isAuthenticated);
+    setIsAuthenticated(auth);
+    console.log("Context Api: " + isAuthenticated);
   };
   return (
     <CreateAuthContext.Provider value={{ isAuthenticated, handleAuthChange }}>

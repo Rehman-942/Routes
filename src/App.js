@@ -6,7 +6,7 @@ import Header from "./Components/Header/Header";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import SignInRoute from "./Components/ProtectedRoutes/SignInRoute";
-import CartRoute from "./Components/ProtectedRoutes/SignInRoute";
+import CartRoute from "./Components/ProtectedRoutes/CartRoute";
 
 function App() {
   return (
@@ -16,9 +16,14 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route element={<CartRoute />}>
-          <Route path="/cart" element={<Cart />} />
-        </Route>
+        <Route
+          path="/cart"
+          element={
+            <CartRoute>
+              <Cart />
+            </CartRoute>
+          }
+        />
         <Route path="/signIn" element={<SignIn />} />
         <Route path="/signOut" element={<SignOut />} />
         <Route path="*" element={<p>Page not found</p>} />
